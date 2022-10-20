@@ -1,0 +1,39 @@
+.idea/*
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+*.un~
+*.swo
+*.swp
+
+build/*
+release
+release/armadillo.obj release/CMakeCache.txt release/CMakeFiles release/cmake_install.cmake release/_deps release/Makefile release/PD release/temp.1.edge release/temp.1.ele release/temp.1.face release/temp.1.node release/temp.poly
+cmake-build-debug/build.ninja cmake-build-debug/CMakeCache.txt cmake-build-debug/CMakeFiles cmake-build-debug/cmake_install.cmake cmake-build-debug/_deps cmake-build-debug/Testing
+temp/CUDAMatrixVectorMult.cpp temp/CUDAMatrixVectorMult.h temp/doubleToFloatDeviceCpy.cuh
