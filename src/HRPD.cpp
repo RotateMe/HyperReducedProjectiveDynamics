@@ -25,9 +25,9 @@ SOFTWARE.
 */
 
 /* libIGL include files for loading meshes and the OpenGL viewer */
-#include "igl\readOBJ.h"
-#include "igl\opengl\glfw\Viewer.h"
-#include "igl\opengl\glfw\ViewerPlugin.h"
+#include "igl/readOBJ.h"
+#include "igl/opengl/glfw/Viewer.h"
+#include "igl/opengl/glfw/ViewerPlugin.h"
 
 /* HRPD include files */
 #include "ProjDynTypeDef.h"

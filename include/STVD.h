@@ -25,8 +25,8 @@ SOFTWARE.
 */
 #pragma once
 
-#include <Eigen\Dense>
-#include <Eigen\Sparse>
+#include <Eigen/Dense>
+#include <Eigen/Sparse>
 #include "ProjDynTypeDef.h"
 #include <queue>
 
