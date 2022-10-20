@@ -52,9 +52,11 @@ SOFTWARE.
 #include "ProjDynMeshSampler.h"
 #include "ProjDynRHSInterpol.h"
 
+#define DO_PRAGMA_(x) _Pragma(#x)
+#define DO_PRAGMA(x) DO_PRAGMA_(x)
 #define PROJ_DYN_NUM_THREADS 6
 #define PROJ_DYN_EIGEN_NUM_THREADS 2
-#define PROJ_DYN_PARALLEL_FOR __pragma(omp parallel for num_threads(PROJ_DYN_NUM_THREADS)) 
+#define PROJ_DYN_PARALLEL_FOR DO_PRAGMA(omp parallel for num_threads(PROJ_DYN_NUM_THREADS))
 
 // If set to true, we sparsify the matrices used in the global step and for interpolation in the subspace
 #define PROJ_DYN_SPARSIFY true

@@ -428,9 +428,9 @@ void PD::ProjDynSimulator::setExamplePoses(std::vector<PDPositions> exPoses, PDS
 			for (auto& edge : m_edges) {
 				int v1Ind = edge.first;
 				int v2Ind = edge.second;
-				PD3dVector edge = m_positions.row(v1Ind) - m_positions.row(v2Ind);
+				PD3dVector edge1 = m_positions.row(v1Ind) - m_positions.row(v2Ind);
 				ProjDynConstraint* c = new SpringConstraint(
-					m_numVertices, v1Ind, v2Ind, edge.norm(), generalWeight * m_normalization,
+					m_numVertices, v1Ind, v2Ind, edge1.norm(), generalWeight * m_normalization,
 					1, 1, m_exPoses, weights);
 				m_springConstraints.push_back(c);
 				addConstraint(c);
@@ -767,9 +767,9 @@ void PD::ProjDynSimulator::addEdgeSprings(PDScalar weight, PDScalar rangeMin, PD
 		int v1Ind = edge.first;
 		int v2Ind = edge.second;
 
-		PD3dVector edge = m_positions.row(v1Ind) - m_positions.row(v2Ind);
+		PD3dVector edge1 = m_positions.row(v1Ind) - m_positions.row(v2Ind);
 		ProjDynConstraint* c = new SpringConstraint(
-			m_numVertices, v1Ind, v2Ind, edge.norm(), weight * m_normalization,
+			m_numVertices, v1Ind, v2Ind, edge1.norm(), weight * m_normalization,
 			rangeMin, rangeMax);
 		m_springConstraints.push_back(c);
 		addConstraint(c);
