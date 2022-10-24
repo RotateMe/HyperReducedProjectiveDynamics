@@ -17,6 +17,7 @@ include(libigl)
 # Enable the target igl::glfw
 igl_include(glfw)
 
+# Set compilation flags
 set(OpenMP_CXX_FLAGS "-fopenmp")
 set(_CRT_SECURE_NO_WARNINGS)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
@@ -35,5 +36,7 @@ if(OpenMP_CXX_FOUND)
 endif()
 
 target_sources(${PROJECT_NAME} PUBLIC ${SRC_FILES})
+
+# Add OBJ file to binary location
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/armadillo.obj
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
