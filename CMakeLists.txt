@@ -9,7 +9,7 @@ add_compile_definitions(EIGEN_DONT_PARALLELIZE)
 
 include_directories(include)
 find_package(OpenMP)
-find_package(CUDAToolkit)
+find_package(CUDAToolkit 9.2)
 
 list(PREPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
@@ -46,3 +46,5 @@ if(CUDAToolkit_FOUND)
 endif()
 
 target_sources(${PROJECT_NAME} PUBLIC ${SRC_FILES})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/armadillo.obj
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
