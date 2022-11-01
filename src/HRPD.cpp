@@ -25,9 +25,9 @@ SOFTWARE.
 */
 
 /* libIGL include files for loading meshes and the OpenGL viewer */
-#include "igl\readOBJ.h"
-#include "igl\opengl\glfw\Viewer.h"
-#include "igl\opengl\glfw\ViewerPlugin.h"
+#include "igl/readOBJ.h"
+#include "igl/opengl/glfw/Viewer.h"
+#include "igl/opengl/glfw/ViewerPlugin.h"
 
 /* HRPD include files */
 #include "ProjDynTypeDef.h"
@@ -234,7 +234,7 @@ int main()
 		SimViewer simViewer(verts, faces, velos, meshURL, numIterations);
 		igl::opengl::glfw::Viewer viewer;
 		viewer.data().set_mesh(verts, faces);
-		viewer.core.is_animating = true;
+		viewer.core().is_animating = true;
 		viewer.plugins.push_back(&simViewer);
 		viewer.init_plugins();
 		viewer.launch();

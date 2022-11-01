@@ -367,7 +367,8 @@ void PD::RHSInterpolationGroup::initInterpolation(unsigned int numVertices, std:
 		m_usingPositionSubspace = true;
 	}
 	else {
-		m_finalizeMatrixBig = m_assemblyMatrix * m_weightMatrix * m_basis;
+        Eigen::SparseMatrix<PDScalar> S = m_basis.sparseView();
+		m_finalizeMatrixBig = m_assemblyMatrix * m_weightMatrix * S;
 		m_usingPositionSubspace = false;
 	}
 
